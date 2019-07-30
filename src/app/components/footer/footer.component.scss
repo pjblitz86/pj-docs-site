@@ -1,9 +1,15 @@
+$background-color: #252526;
+$color: #929293;
+
 footer {
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
   justify-content: end;
   grid-gap: 20px;
+  background-color: $background-color;
+  color: $color;
+  padding: 0 20px;
 
   #social-media {
     display: grid;
