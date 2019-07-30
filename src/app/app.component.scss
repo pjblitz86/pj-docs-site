@@ -1,0 +1,13 @@
+#site-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "side-nav app-home";
+
+  app-side-nav {
+    grid-area: side-nav;
+  }
+
+  app-home {
+    grid-area: app-home;
+  }
+}
