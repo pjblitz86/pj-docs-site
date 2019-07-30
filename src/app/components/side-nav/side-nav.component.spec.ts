@@ -21,17 +21,23 @@ describe("Side Nav Component", () => {
         // assert
         expect(component.isClosed).toBe(true);
       });
+    });
+    it("Opens menu", () => {
+      // arrange
+      component.isClosed = true;
+      // act
+      component.openMenu();
+      // assert
+      expect(component.isClosed).toBe(false);
+    });
 
-      it("Open menu", () => {
-        // arrange
-        component.isClosed = true;
-
-        // act
-        component.openMenu();
-
-        // assert
-        expect(component.isClosed).toBe(false);
-      });
+    it("Closes menu", () => {
+      //arrange
+      component.isClosed = false;
+      //act
+      component.closeMenu();
+      //assert
+      expect(component.isClosed).toBe(true);
     });
   });
 });

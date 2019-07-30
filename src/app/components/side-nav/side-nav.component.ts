@@ -11,4 +11,8 @@ export class SideNavComponent {
   public openMenu(): void {
     this.isClosed = false;
   }
+
+  public closeMenu(): void {
+    this.isClosed = true;
+  }
 }
