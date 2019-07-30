@@ -7,6 +7,9 @@ footer {
   align-items: center;
   justify-content: end;
   grid-gap: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
   background-color: $background-color;
   color: $color;
   padding: 0 20px;

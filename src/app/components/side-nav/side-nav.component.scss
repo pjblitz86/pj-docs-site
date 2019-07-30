@@ -5,8 +5,8 @@ nav {
   background-color: $background-color;
 
   ul {
-    list-style: none;
-
+    display: grid;
+    grid-gap: 10px;
     li {
       i {
         font-size: 30px;
