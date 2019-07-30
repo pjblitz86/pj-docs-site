@@ -1,15 +1,45 @@
 $background-color: #2b2b2b;
+$side-padding: 12px;
 
 nav {
   display: grid;
   background-color: $background-color;
+  height: 100vh;
+  align-content: baseline;
+  max-width: 30vw;
+
+  &.is-closed {
+    max-width: 10vw;
+  }
 
   ul {
     display: grid;
     grid-gap: 10px;
+    padding-left: $side-padding;
+
     li {
+      &#logo {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+
+        span {
+          display: block;
+        }
+
+        i {
+          display: block;
+          justify-self: end;
+          padding-right: $side-padding;
+        }
+      }
+
       i {
         font-size: 30px;
+
+        &.fa-chevron-left {
+          font-size: 15px;
+        }
         &.fa-html5 {
           color: #ff073a;
         }

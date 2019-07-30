@@ -1,9 +1,11 @@
-<nav>
+<nav [class.is-closed]="isClosed">
   <ul>
-    <li>Site Icon</li>
-    <li><i class="fas fa-search"></i></li>
-    <li><i class="fab fa-html5"></i></li>
-    <li><i class="fab fa-css3"></i></li>
-    <li><i class="fab fa-js"></i></li>
+    <li id="logo">
+      <span>Site</span> <i *ngIf="!isClosed" class="fas fa-chevron-left"></i>
+    </li>
+    <li><i class="fas fa-search" (click)="openMenu()"></i></li>
+    <li><i class="fab fa-html5" (click)="openMenu()"></i></li>
+    <li><i class="fab fa-css3" (click)="openMenu()"></i></li>
+    <li><i class="fab fa-js" (click)="openMenu()"></i></li>
   </ul>
 </nav>

@@ -16,5 +16,22 @@ describe("Side Nav Component", () => {
     beforeEach(() => {
       component = new SideNavComponent();
     });
+    describe("Initialization", () => {
+      it("Menu is closed", () => {
+        // assert
+        expect(component.isClosed).toBe(true);
+      });
+
+      it("Open menu", () => {
+        // arrange
+        component.isClosed = true;
+
+        // act
+        component.openMenu();
+
+        // assert
+        expect(component.isClosed).toBe(false);
+      });
+    });
   });
 });
