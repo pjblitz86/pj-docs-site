@@ -1,13 +1,13 @@
 #site-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "side-nav router-outlet";
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "side-nav main";
 
   app-side-nav {
     grid-area: side-nav;
   }
 
-  #router-outlet {
-    grid-area: router-outlet;
+  main {
+    grid-area: main;
   }
 }
