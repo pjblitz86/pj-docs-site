@@ -1,6 +1,6 @@
 import { CategoryComponent } from "./category.component";
 
-describe("Home Component", () => {
+describe("Category Component", () => {
   it("Exist", () => {
     // assert
     expect(CategoryComponent).toBeDefined();
