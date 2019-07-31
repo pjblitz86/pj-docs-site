@@ -10,6 +10,10 @@
   padding: 10px;
   border: 1px solid white;
 
+  &.is-hidden {
+    display: none;
+  }
+
   #close {
     justify-self: end;
 

@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-modal',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.scss']
+  selector: "app-modal",
+  templateUrl: "./modal.component.html",
+  styleUrls: ["./modal.component.scss"]
 })
-export class ModalComponent implements OnInit {
+export class ModalComponent {
+  public isHidden: boolean = true;
 
-  constructor() { }
-
-  ngOnInit() {
+  public open(): void {
+    this.isHidden = false;
   }
 
+  public close(): void {
+    this.isHidden = true;
+  }
 }

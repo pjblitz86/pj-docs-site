@@ -16,5 +16,27 @@ describe("Modal Component", () => {
     beforeEach(() => {
       component = new ModalComponent();
     });
+    describe("Initialization", () => {
+      it("Is hidden on load", () => {
+        //assert
+        expect(component.isHidden).toBe(true);
+      });
+    });
+    it("Opens modal", () => {
+      //arrange
+      component.isHidden = true;
+      //act
+      component.open();
+      //assert
+      expect(component.isHidden).toBe(false);
+    });
+    it("Closes modal", () => {
+      //arrange
+      component.isHidden = false;
+      //act
+      component.close();
+      //assert
+      expect(component.isHidden).toBe(true);
+    });
   });
 });

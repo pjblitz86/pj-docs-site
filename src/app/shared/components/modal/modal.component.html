@@ -1,5 +1,5 @@
-<div id="modal-container">
-  <span id="close"><i class="fas fa-times"></i></span>
+<div id="modal-container" [class.is-hidden]="isHidden">
+  <span id="close" (click)="close()"><i class="fas fa-times"></i></span>
   <div id="content">
     <ng-content></ng-content>
   </div>
