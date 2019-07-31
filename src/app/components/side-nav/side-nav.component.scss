@@ -1,10 +1,12 @@
-$background-color: #2b2b2b;
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
 $color: #929293;
 $side-padding: 20px;
 
 nav {
   display: grid;
-  background-color: $background-color;
+  background-color: $secondary-background;
   height: 100vh;
   align-content: baseline;
   width: 30vw;

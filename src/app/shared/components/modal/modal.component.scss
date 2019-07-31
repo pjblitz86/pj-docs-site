@@ -1,0 +1,20 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+#modal-container {
+  display: grid;
+  max-height: 75vh;
+  min-width: 50vw;
+  background-color: $secondary-background;
+  grid-gap: 5px;
+  padding: 10px;
+  border: 1px solid white;
+
+  #close {
+    justify-self: end;
+
+    i:hover {
+      color: white;
+    }
+  }
+}
