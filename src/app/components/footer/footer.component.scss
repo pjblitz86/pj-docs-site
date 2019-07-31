@@ -20,6 +20,11 @@ footer {
     grid-template-columns: auto auto auto;
     a {
       display: inline-block;
+      border-bottom: 3px solid transparent;
+
+      &:hover {
+        border-bottom: 3px solid white;
+      }
     }
   }
 }
