@@ -1,5 +1,6 @@
 $background-color: #2b2b2b;
-$side-padding: 12px;
+$color: #929293;
+$side-padding: 20px;
 
 nav {
   display: grid;
@@ -18,23 +19,29 @@ nav {
     padding-left: $side-padding;
 
     li {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      align-items: center;
+
       &#logo {
         display: grid;
         grid-template-columns: auto 1fr;
         align-items: center;
 
-        span {
-          display: block;
+        .fa-eye {
+          width: 30px;
         }
 
         i {
           display: block;
           justify-self: end;
           padding-right: $side-padding;
+          color: $color;
         }
       }
 
       i {
+        display: block;
         font-size: 30px;
 
         &.fa-chevron-left {
@@ -48,6 +55,13 @@ nav {
         }
         &.fa-js {
           color: #f7ff00;
+        }
+      }
+
+      span {
+        display: block;
+        &.is-closed {
+          display: none;
         }
       }
     }

@@ -4,11 +4,13 @@
 /* GLOBAL */
 :root {
   --background-color: #1e1e1e;
+  --color: #929293;
 }
 
 * {
   box-sizing: border-box;
   font-family: "Raleway", sans-serif;
+  color: var(--color);
 }
 
 body {
