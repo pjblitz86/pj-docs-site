@@ -7,9 +7,10 @@ import { SideNavComponent } from "./components/side-nav/side-nav.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ModalComponent } from './shared/components/modal/modal.component';
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, SideNavComponent],
+  declarations: [AppComponent, FooterComponent, SideNavComponent, ModalComponent],
   imports: [BrowserModule, AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   providers: [],
   bootstrap: [AppComponent]
