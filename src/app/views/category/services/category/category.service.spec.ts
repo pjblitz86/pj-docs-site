@@ -11,10 +11,4 @@ describe("Category Service Component", () => {
     // assert
     expect(component instanceof CategoryService).toBe(true);
   });
-  describe("General", () => {
-    let component: CategoryService;
-    beforeEach(() => {
-      component = new CategoryService();
-    });
-  });
 });

@@ -4,7 +4,7 @@ import { CategoryComponent } from "./category.component";
 import { ACategoryService } from "./services/category/acategory.service";
 import { CategoryService } from "./services/category/category.service";
 
-const routes: Routes = [{ path: "", component: CategoryComponent }];
+const routes: Routes = [{ path: ":id", component: CategoryComponent }];
 
 @NgModule({
   declarations: [CategoryComponent],

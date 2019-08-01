@@ -7,14 +7,8 @@ describe("Category Component", () => {
   });
   it("Can be built", () => {
     //act
-    const component = new CategoryComponent();
+    const component = new CategoryComponent(null, null);
     // assert
     expect(component instanceof CategoryComponent).toBe(true);
-  });
-  describe("General", () => {
-    let component: CategoryComponent;
-    beforeEach(() => {
-      component = new CategoryComponent();
-    });
   });
 });
