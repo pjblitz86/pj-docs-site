@@ -1,21 +1,29 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ACategoryService } from "./services/category/acategory.service";
+import { Category } from "./models/category.model";
 
 @Component({
   selector: "app-category",
   templateUrl: "./category.component.html",
   styleUrls: ["./category.component.scss"]
 })
-export class CategoryComponent implements OnInit {
+export class CategoryComponent {
+  public category: Category = new Category();
+
   constructor(
     private route: ActivatedRoute,
     private categoryService: ACategoryService
   ) {}
 
-  public async ngOnInit(): Promise<void> {
-    this.route.params.subscribe(params => {
-      console.log(params);
+  public ngOnInit(): void {
+    this.updateCategoryData();
+  }
+
+  private updateCategoryData(): void {
+    this.route.params.subscribe(async params => {
+      const { id } = params;
+      this.category = await this.categoryService.getCategory(id);
     });
   }
 }
