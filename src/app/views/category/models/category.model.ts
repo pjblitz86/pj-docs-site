@@ -18,5 +18,6 @@ export class Category {
     this.id = defaults.id;
     this.title = defaults.title;
     this.description = defaults.description;
+    this.topics = defaults.topics.map(topic => new Topic(topic));
   }
 }
