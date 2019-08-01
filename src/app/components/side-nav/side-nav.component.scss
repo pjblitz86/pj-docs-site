@@ -50,13 +50,13 @@ nav {
           font-size: 15px;
         }
         &.fa-html5 {
-          color: #ff073a;
+          color: $html-color;
         }
         &.fa-css3 {
-          color: #4666ff;
+          color: $css-color;
         }
         &.fa-js {
-          color: #f7ff00;
+          color: $javascript-color;
         }
       }
 

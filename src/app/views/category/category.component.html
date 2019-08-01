@@ -1,1 +1,6 @@
-<h2>category works!</h2>
+<header>
+  <i [ngClass]="[category.iconClasses, category.id]"></i>
+  <h1>{{ category.title }}</h1>
+
+  <p>{{ category.description }}</p>
+</header>

@@ -1,0 +1,26 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+header {
+  display: grid;
+  grid-template-areas: "icon title" "description description";
+
+  i {
+    grid-area: icon;
+    font-size: 6rem;
+
+    &.javascript {
+      color: $javascript-color;
+    }
+  }
+
+  h1 {
+    grid-area: title;
+  }
+
+  p {
+    grid-area: description;
+    text-align: center;
+    color: white;
+  }
+}
