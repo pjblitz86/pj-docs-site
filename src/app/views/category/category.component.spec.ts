@@ -1,8 +1,10 @@
 import { CategoryComponent } from "./category.component";
-import { ACategoryService } from "./services/category/acategory.service";
-import { MockCategoryService } from "./services/category/mock.category.service";
-import { Observable, observable, BehaviorSubject } from "rxjs";
+import { BehaviorSubject, of } from "rxjs";
 import { convertToParamMap } from "@angular/router";
+import { ACategoryService } from "src/app/services/category/acategory.service";
+import { MockCategoryService } from "src/app/services/category/mock.category.service";
+import { Categories } from "src/app/models/enums/Category.enum";
+import { MockActivatedRoute } from "src/app/shared/mocks/mock-activated-route";
 
 describe("Category Component", () => {
   it("Exist", () => {
@@ -15,6 +17,7 @@ describe("Category Component", () => {
     // assert
     expect(component instanceof CategoryComponent).toBe(true);
   });
+
   describe("General", () => {
     let component: CategoryComponent;
     let categoryService: ACategoryService;
@@ -22,21 +25,23 @@ describe("Category Component", () => {
 
     beforeEach(() => {
       const observable = new BehaviorSubject(
-        convertToParamMap({ id: "javascript" })
+        convertToParamMap({ id: Categories.JavaScript })
       ).asObservable();
-      activatedRoute = observable;
+      activatedRoute = new MockActivatedRoute();
+      activatedRoute.params = of({ id: Categories.JavaScript });
       categoryService = new MockCategoryService();
       component = new CategoryComponent(activatedRoute, categoryService);
     });
+
     describe("On Init", () => {
-      // it("Updates category", async () => {
-      //   // arrange
-      //   component.category = null;
-      //   // act
-      //   await component.ngOnInit();
-      //   // assert
-      //   expect(component.category.id).toBe("javascript");
-      // });
+      it("Updates category", async () => {
+        // arrange
+        component.category = null;
+        // act
+        await component.ngOnInit();
+        // assert
+        expect(component.category.id).toBe(Categories.JavaScript);
+      });
     });
   });
 });
