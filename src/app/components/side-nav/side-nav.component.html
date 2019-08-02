@@ -9,16 +9,27 @@
       ></i>
     </li>
     <!-- <li><i class="fas fa-search" (click)="openMenu()"></i></li> -->
-    <li>
-      <i class="fab fa-html5" (click)="openMenu()" [routerLink]="['category/html']"></i>
-      <span [class.is-closed]="isClosed">HTML</span>
+    <li
+      (click)="openMenu()"
+      [routerLink]="['category/html']"
+      [routerLinkActive]="'active-route'"
+    >
+      <i class="fab fa-html5"></i><span [class.is-closed]="isClosed">HTML</span>
     </li>
-    <li>
-      <i class="fab fa-css3" (click)="openMenu()" [routerLink]="['category/css']"></i>
+    <li
+      (click)="openMenu()"
+      [routerLink]="['category/css']"
+      [routerLinkActive]="'active-route'"
+    >
+      <i class="fab fa-css3"></i>
       <span [class.is-closed]="isClosed">CSS</span>
     </li>
-    <li>
-      <i class="fab fa-js" (click)="openMenu()" [routerLink]="['category/javascript']"></i>
+    <li
+      (click)="openMenu()"
+      [routerLink]="['category/javascript']"
+      [routerLinkActive]="'active-route'"
+    >
+      <i class="fab fa-js"></i>
       <span [class.is-closed]="isClosed">Javascript</span>
     </li>
   </ul>

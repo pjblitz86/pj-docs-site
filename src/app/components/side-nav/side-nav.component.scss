@@ -18,12 +18,20 @@ nav {
   ul {
     display: grid;
     grid-gap: 10px;
-    padding-left: $side-padding;
 
     li {
       display: grid;
       grid-template-columns: 30px 1fr;
       align-items: center;
+      padding-left: $side-padding;
+
+      &.active-route {
+        background-color: $blue;
+
+        span {
+          color: white;
+        }
+      }
 
       &#logo {
         display: grid;
@@ -31,7 +39,7 @@ nav {
         align-items: center;
 
         .fa-eye {
-          width: 30px;
+          width: 25px;
         }
 
         i {
@@ -45,6 +53,7 @@ nav {
       i {
         display: block;
         font-size: 30px;
+        padding: 5px 5px;
 
         &.fa-chevron-left {
           font-size: 15px;
@@ -62,6 +71,7 @@ nav {
 
       span {
         display: block;
+        padding-left: $side-padding;
         &.is-closed {
           display: none;
         }

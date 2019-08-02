@@ -1,10 +1,9 @@
 import { CategoryComponent } from "./category.component";
-import { BehaviorSubject, of } from "rxjs";
-import { convertToParamMap } from "@angular/router";
 import { ACategoryService } from "src/app/services/category/acategory.service";
 import { MockCategoryService } from "src/app/services/category/mock.category.service";
 import { Categories } from "src/app/models/enums/Category.enum";
 import { MockActivatedRoute } from "src/app/shared/mocks/mock-activated-route";
+import { of } from "rxjs";
 
 describe("Category Component", () => {
   it("Exist", () => {
@@ -24,9 +23,6 @@ describe("Category Component", () => {
     let activatedRoute: any;
 
     beforeEach(() => {
-      const observable = new BehaviorSubject(
-        convertToParamMap({ id: Categories.JavaScript })
-      ).asObservable();
       activatedRoute = new MockActivatedRoute();
       activatedRoute.params = of({ id: Categories.JavaScript });
       categoryService = new MockCategoryService();
