@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { ACategoryService } from "./services/category/acategory.service";
-import { Category } from "./models/category.model";
+import { ACategoryService } from "src/app/services/category/acategory.service";
+import { Category } from "src/app/models/category.model";
 
 @Component({
   selector: "app-category",

@@ -1,10 +1,10 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { CategoryComponent } from "./category.component";
-import { ACategoryService } from "./services/category/acategory.service";
-import { CategoryService } from "./services/category/category.service";
 import { CommonModule } from "@angular/common";
-import { ResourcesComponent } from './components/resources/resources.component';
+import { ACategoryService } from 'src/app/services/category/acategory.service';
+import { ResourcesComponent } from './resources/resources.component';
+import { CategoryService } from 'src/app/services/category/category.service';
 
 const routes: Routes = [{ path: ":id", component: CategoryComponent }];
 
