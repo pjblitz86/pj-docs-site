@@ -2,8 +2,9 @@
 
 nav {
   h3 {
+    margin-top: 20px;
     margin-bottom: 0;
-    background-color: #252525;
+    background-color: $background-color;
     color: white;
     height: 75px;
     display: grid;

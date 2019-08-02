@@ -16,6 +16,8 @@ export const JAVASCRIPT_DATA: Category = new Category({
     new Topic({ id: "boolean", label: "Boolean" }),
     new Topic({ id: "boolean", label: "Boolean" }),
     new Topic({ id: "boolean", label: "Boolean" }),
+    new Topic({ id: "boolean", label: "Boolean" }),
+    new Topic({ id: "boolean", label: "Boolean" }),
     new Topic({ id: "boolean", label: "Boolean" })
   ],
   iconClasses: ""
