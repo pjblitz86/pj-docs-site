@@ -1,21 +1,18 @@
 @import "@fortawesome/fontawesome-free/css/all.css";
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap");
+@import "src/styles/variables";
 
 /* GLOBAL */
-:root {
-  --background-color: #1e1e1e;
-  --color: #929293;
-}
 
 * {
   box-sizing: border-box;
   font-family: "Raleway", sans-serif;
-  color: var(--color);
+  color: $light-grey;
 }
 
 body {
   margin: 0;
-  background-color: var(--background-color);
+  background-color: $black;
 }
 
 h1,

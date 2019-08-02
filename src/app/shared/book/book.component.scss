@@ -1,0 +1,11 @@
+@import "src/styles/variables";
+
+article {
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  img {
+    background-color: $black;
+    display: block;
+  }
+}
