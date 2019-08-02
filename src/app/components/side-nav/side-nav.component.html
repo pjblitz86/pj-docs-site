@@ -1,6 +1,6 @@
 <nav [class.is-closed]="isClosed">
   <ul>
-    <li id="logo">
+    <li id="logo" [routerLink]="['']">
       <i class="fas fa-eye"></i>
       <i
         *ngIf="!isClosed"
@@ -10,15 +10,15 @@
     </li>
     <!-- <li><i class="fas fa-search" (click)="openMenu()"></i></li> -->
     <li>
-      <i class="fab fa-html5" (click)="openMenu()"></i>
+      <i class="fab fa-html5" (click)="openMenu()" [routerLink]="['category/html']"></i>
       <span [class.is-closed]="isClosed">HTML</span>
     </li>
     <li>
-      <i class="fab fa-css3" (click)="openMenu()"></i>
+      <i class="fab fa-css3" (click)="openMenu()" [routerLink]="['category/css']"></i>
       <span [class.is-closed]="isClosed">CSS</span>
     </li>
     <li>
-      <i class="fab fa-js" (click)="openMenu()"></i>
+      <i class="fab fa-js" (click)="openMenu()" [routerLink]="['category/javascript']"></i>
       <span [class.is-closed]="isClosed">Javascript</span>
     </li>
   </ul>
