@@ -1,11 +1,39 @@
 @import "src/styles/variables";
 
-article {
-  display: grid;
-  grid-template-columns: auto 1fr;
+$padding: 15px;
 
-  img {
-    background-color: $black;
-    display: block;
+article {
+  #book-content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    background-color: $tertiary-background;
+    padding: $padding;
+    grid-column-gap: 20px;
+
+    img {
+      background-color: $black;
+      padding: $padding 20px;
+      display: block;
+    }
+
+    #information {
+      display: grid;
+
+      h3 {
+        color: $orange;
+        margin-top: 0;
+        margin-bottom: 5px;
+      }
+
+      p {
+        color: white;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  #book-details {
+    padding-bottom: $padding;
+    background-color: $tertiary-background;
   }
 }

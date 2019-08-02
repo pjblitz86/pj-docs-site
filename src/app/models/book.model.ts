@@ -7,7 +7,7 @@ export class Book {
 
   constructor(data?: any) {
     const defaults = {
-      imageUrl: "https://via.placeholder.com/150x200",
+      imageUrl: "https://via.placeholder.com/75x100",
       title: "",
       description: "",
       href: "",

@@ -38,3 +38,9 @@ ul {
 i {
   cursor: pointer;
 }
+
+hr {
+  width: 100%;
+  border-color: $tertiary-background;
+  background-color: $tertiary-background;
+}

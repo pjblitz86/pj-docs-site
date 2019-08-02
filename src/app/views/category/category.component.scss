@@ -42,3 +42,10 @@ header {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+app-card {
+  #book-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
