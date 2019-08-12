@@ -7,7 +7,7 @@ $side-padding: 20px;
 nav {
   display: grid;
   background-color: $secondary-background;
-  height: 100vh;
+  min-height: 100vh;
   align-content: baseline;
   width: 30vw;
 
