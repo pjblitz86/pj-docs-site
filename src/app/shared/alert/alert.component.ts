@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { Alert } from 'src/app/models/enums/alert.enum';
+import { Alert } from "src/app/models/enums/alert.enum";
 
 @Component({
   selector: "app-alert",
@@ -12,5 +12,9 @@ export class AlertComponent {
   @Input() public content: string = "";
 
   public alertTypes = Alert;
+  public isShown: boolean = true;
 
+  public close(): void {
+    this.isShown = false;
+  }
 }
