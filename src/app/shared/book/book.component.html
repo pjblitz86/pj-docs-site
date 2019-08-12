@@ -15,7 +15,9 @@
     <hr />
     <div id="rating">
       <div id="buy"><i class="fas fa-info-circle"></i> Details</div>
-      <div id="stars">STARS</div>
+      <div id="stars">
+        <app-star-list [rating]="this.book.rating"></app-star-list>
+      </div>
     </div>
   </div>
 </article>

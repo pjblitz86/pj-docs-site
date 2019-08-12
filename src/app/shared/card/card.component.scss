@@ -6,11 +6,12 @@ section {
   display: grid;
   background-color: $background-color;
   margin: 10px 0;
+  padding: $padding;
 
   h2 {
     color: white;
     padding: $padding;
-    padding-bottom: 0;
+    margin: 0;
   }
 
   #card-body {

@@ -7,5 +7,5 @@ import { Book } from "src/app/models/book.model";
   styleUrls: ["./book.component.scss"]
 })
 export class BookComponent {
-  @Input() public book: Book = new Book();
+  @Input() public book: Book = new Book({ rating: 4 });
 }
