@@ -33,7 +33,27 @@ article {
   }
 
   #book-details {
-    padding-bottom: $padding;
     background-color: $tertiary-background;
+
+    hr {
+      margin: 0;
+    }
+
+    #rating {
+      display: grid;
+      font-size: 20px;
+      padding: $padding;
+      grid-template-columns: auto auto;
+
+      #buy,
+      i {
+        color: $orange;
+      }
+
+      #stars {
+        justify-self: end;
+        color: $yellow;
+      }
+    }
   }
 }
