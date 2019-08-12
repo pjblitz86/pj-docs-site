@@ -1,0 +1,8 @@
+<div id="alert" [class]="type">
+  <div [ngSwitch]="type">
+    <i *ngSwitchCase="alertTypes.Info" class="fas fa-info-circle"></i>
+  </div>
+
+  <h3>{{ title }}</h3>
+  <p>{{ content }}</p>
+</div>

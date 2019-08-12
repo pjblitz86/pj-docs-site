@@ -8,8 +8,9 @@ nav {
   display: grid;
   background-color: $secondary-background;
   min-height: 100vh;
+  height: 100%;
   align-content: baseline;
-  width: 30vw;
+  width: 20vw;
 
   &.is-closed {
     width: 10vw;

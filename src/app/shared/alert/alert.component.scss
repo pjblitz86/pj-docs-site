@@ -1,0 +1,17 @@
+@import "src/styles/variables";
+
+#alert {
+  padding: 15px;
+
+  &.info {
+    background-color: $background-color;
+
+    h3 {
+      color: $orange;
+    }
+
+    p {
+      color: white;
+    }
+  }
+}
