@@ -1,17 +1,45 @@
 @import "src/styles/variables";
 
 #alert {
+  display: grid;
+  grid-template-columns: auto 500px 1fr;
+  grid-gap: 20px;
+  align-items: center;
   padding: 15px;
+
+  #icon-type {
+    font-size: 50px;
+  }
+
+  #close {
+    display: grid;
+    border: none;
+    padding: 10px;
+    font-size: 25px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    justify-items: center;
+    align-items: center;
+    justify-self: end;
+    margin: 20px;
+  }
 
   &.info {
     background-color: $background-color;
+    border-left: 10px solid $blue;
 
     h3 {
       color: $orange;
     }
 
-    p {
+    p,
+    i {
       color: white;
+    }
+
+    button {
+      background-color: $red;
     }
   }
 }
