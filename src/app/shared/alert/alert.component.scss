@@ -1,8 +1,10 @@
 @import "src/styles/variables";
 
+$alert-offset: 200px;
+
 @keyframes slide-up {
   0% {
-    transform: translateY(200px);
+    transform: translateY($alert-offset);
   }
 
   100% {
@@ -16,7 +18,7 @@
   }
 
   100% {
-    transform: translateY(200px);
+    transform: translateY($alert-offset);
   }
 }
 
@@ -29,7 +31,7 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  transform: translateY(200px);
+  transform: translateY($alert-offset);
 
   &.is-shown {
     animation: slide-up 1.5s linear;
