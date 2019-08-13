@@ -8,7 +8,7 @@ import { Alert } from "src/app/models/enums/alert.enum";
 export class AlertService {
   public alertSubject = new Subject();
 
-  public getAlert(
+  public callAlert(
     type: Alert,
     title: string,
     content: string,

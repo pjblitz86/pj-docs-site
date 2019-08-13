@@ -1,23 +1,29 @@
-import { AlertComponent } from "./alert.component";
-import { Component } from "@angular/core";
+import { AlertComponent } from "src/app/shared/alert/alert.component";
+import { AlertService } from "src/app/services/alert/alert.service";
 
-describe("Alert Component", () => {
+describe("AlertService Component", () => {
   it("Exist", () => {
     // assert
-    expect(AlertComponent).toBeDefined();
+    expect(AlertService).toBeDefined();
   });
   it("Can be built", () => {
+    //arrange
+    const alertService = new AlertService();
+
     //act
-    const component = new AlertComponent();
+    const component = new AlertComponent(alertService);
+
     // assert
     expect(component instanceof AlertComponent).toBe(true);
   });
 
   describe("General", () => {
     let component: AlertComponent;
+    let alertService: AlertService;
 
     beforeEach(() => {
-      component = new AlertComponent();
+      alertService = new AlertService();
+      component = new AlertComponent(alertService);
     });
 
     describe("Close", () => {

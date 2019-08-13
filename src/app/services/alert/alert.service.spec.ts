@@ -1,41 +1,51 @@
 import { AlertService } from "./alert.service";
-import { AlertComponent } from "src/app/shared/alert/alert.component";
+import { Subject } from "rxjs";
+import { Alert } from "src/app/models/enums/alert.enum";
 
-describe("AlertService Component", () => {
+describe("Alert Service Component", () => {
   it("Exist", () => {
     // assert
     expect(AlertService).toBeDefined();
   });
   it("Can be built", () => {
-    //arrange
-    const alertService = new AlertService();
-
     //act
-    const component = new AlertComponent(alertService);
-
+    const service = new AlertService();
     // assert
-    expect(component instanceof AlertComponent).toBe(true);
+    expect(service instanceof AlertService).toBe(true);
   });
-
   describe("General", () => {
-    let component: AlertComponent;
-    let alertService: AlertService;
+    let service: AlertService;
 
     beforeEach(() => {
-      alertService = new AlertService();
-      component = new AlertComponent(alertService);
+      service = new AlertService();
     });
 
-    describe("Close", () => {
-      it("Closes alert", () => {
-        //arrange
-        component.isShown = true;
+    describe("Defaults", () => {
+      it("Has alert subject", () => {
+        //assert
+        expect(service.alertSubject instanceof Subject).toBe(true);
+      });
+    });
+
+    describe("Call alert", () => {
+      it("Pushes next alert data", done => {
+        // arrange
+        const type = Alert.Info;
+        const title = "some title";
+        const content = "some content";
+        const localStorageKey = "some key";
+
+        // assert
+        service.alertSubject.subscribe((data: any) => {
+          expect(data.type).toBe(type);
+          expect(data.title).toBe(title);
+          expect(data.content).toBe(content);
+          expect(data.localStorageKey).toBe(localStorageKey);
+          done();
+        });
 
         //act
-        component.close();
-
-        //assert
-        expect(component.isShown).toBe(false);
+        service.callAlert(type, title, content, localStorageKey);
       });
     });
   });
