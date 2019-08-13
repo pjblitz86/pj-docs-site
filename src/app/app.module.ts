@@ -7,9 +7,15 @@ import { SideNavComponent } from "./components/side-nav/side-nav.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";
+import { AlertComponent } from "./shared/alert/alert.component";
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, SideNavComponent],
+  declarations: [
+    AppComponent,
+    FooterComponent,
+    SideNavComponent,
+    AlertComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

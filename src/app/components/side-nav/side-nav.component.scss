@@ -58,15 +58,34 @@ nav {
 
         &.fa-chevron-left {
           font-size: 15px;
+
+          &.active-route {
+            color: white;
+          }
         }
+
         &.fa-html5 {
           color: $html-color;
+
+          &.active-route {
+            color: white;
+          }
         }
-        &.fa-css3 {
+
+        &.fa-css3-alt {
           color: $css-color;
+
+          &.active-route {
+            color: white;
+          }
         }
+
         &.fa-js {
           color: $javascript-color;
+
+          &.active-route {
+            color: white;
+          }
         }
       }
 
