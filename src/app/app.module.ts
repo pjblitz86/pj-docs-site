@@ -7,23 +7,20 @@ import { SideNavComponent } from "./components/side-nav/side-nav.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";
-import { AlertComponent } from "./shared/alert/alert.component";
+import { SharedModule } from "./shared/shared.module";
+import { AlertService } from "./services/alert/alert.service";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FooterComponent,
-    SideNavComponent,
-    AlertComponent
-  ],
+  declarations: [AppComponent, FooterComponent, SideNavComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production
     })
   ],
-  providers: [],
+  providers: [AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

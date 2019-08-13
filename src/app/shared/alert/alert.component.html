@@ -1,7 +1,7 @@
 <div
   id="alert"
   [class]="type"
-  [class.is-shown]="isShown"
+  [class.is-shown]="isShown && isNeeded"
   [class.is-closed]="!isShown"
 >
   <div id="icon-type" [ngSwitch]="type">

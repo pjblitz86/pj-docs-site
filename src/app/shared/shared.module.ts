@@ -6,6 +6,7 @@ import { CommonModule } from "@angular/common";
 import { StarListComponent } from "./star-list/star-list.component";
 import { ALocalStorageService } from "../services/local-storage/alocal-storage.service";
 import { LocalStorage } from "../services/local-storage/local-storage.service";
+import { AlertComponent } from "./alert/alert.component";
 
 @NgModule({
   imports: [CommonModule],
@@ -13,9 +14,16 @@ import { LocalStorage } from "../services/local-storage/local-storage.service";
     ModalComponent,
     CardComponent,
     BookComponent,
-    StarListComponent
+    StarListComponent,
+    AlertComponent
   ],
   providers: [{ provide: ALocalStorageService, useClass: LocalStorage }],
-  exports: [ModalComponent, CardComponent, BookComponent, StarListComponent]
+  exports: [
+    ModalComponent,
+    CardComponent,
+    BookComponent,
+    StarListComponent,
+    AlertComponent
+  ]
 })
 export class SharedModule {}
