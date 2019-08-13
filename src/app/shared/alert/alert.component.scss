@@ -5,11 +5,13 @@
     transform: translateY(200px);
   }
 
-  20% {
+  100% {
     transform: translateY(0);
   }
+}
 
-  80% {
+@keyframes slide-down {
+  0% {
     transform: translateY(0);
   }
 
@@ -28,7 +30,15 @@
   bottom: 0;
   width: 100%;
   transform: translateY(200px);
-  animation: slide-up 7s linear;
+
+  &.is-shown {
+    animation: slide-up 1.5s linear;
+    animation-fill-mode: forwards;
+  }
+
+  &.is-closed {
+    animation: slide-down 1.5s linear;
+  }
 
   #icon-type {
     font-size: 50px;
