@@ -20,7 +20,7 @@ import { AlertService } from "./services/alert/alert.service";
       enabled: environment.production
     })
   ],
-  providers: [AlertService],
+  providers: [AlertService ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

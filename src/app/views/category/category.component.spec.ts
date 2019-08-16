@@ -2,7 +2,7 @@ import { CategoryComponent } from "./category.component";
 import { ACategoryService } from "src/app/services/category/acategory.service";
 import { MockCategoryService } from "src/app/services/category/mock.category.service";
 import { Categories } from "src/app/models/enums/Category.enum";
-import { MockActivatedRoute } from "src/app/shared/mocks/mock-activated-route";
+import { MockActivatedRoute } from "src/app/services/mocks/mock-activated-route";
 import { of } from "rxjs";
 
 describe("Category Component", () => {
