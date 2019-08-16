@@ -31,6 +31,21 @@ describe("AlertService Component", () => {
       component = new AlertComponent(alertService, mockLocalStorageService);
     });
 
+    describe("On Init", () => {
+      it("Calls cookie notification if not previously called", () => {
+        //arrange
+        mockLocalStorageService.storage = {};
+
+        //act
+        component.ngOnInit();
+
+        //assert
+        expect(component.alert.key).toBe(LocalStorageKey.CookieNotification);
+
+        expect(component.isNeeded).toBe(true);
+      });
+    });
+
     describe("Close", () => {
       it("Closes alert", () => {
         //arrange

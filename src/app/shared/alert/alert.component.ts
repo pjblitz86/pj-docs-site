@@ -40,13 +40,14 @@ export class AlertComponent implements OnInit {
   }
 
   private callCookieNotification(): void {
-    const type = AlertTypes.Info;
-    const title = "What do we use cookies for?";
-    const content =
-      "We use cookies to recognize your repeat visits and preferences, as well as to measure the effectiveness of campaign and analyze traffic.";
-    const key = LocalStorageKey.CookieNotification;
     this.isNeeded = true;
 
-    this.alert = new Alert({ type, title, content, key });
+    this.alert = new Alert({
+      type: AlertTypes.Info,
+      title: "What do we use cookies for?",
+      content:
+        "We use cookies to recognize your repeat visits and preferences, as well as to measure the effectiveness of campaign and analyze traffic.",
+      key: LocalStorageKey.CookieNotification
+    });
   }
 }
