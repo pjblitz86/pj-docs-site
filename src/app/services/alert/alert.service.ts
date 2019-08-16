@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
-import { Alert } from "src/app/models/enums/alert.enum";
+import { Alert } from "src/app/models/alert.model";
 
 @Injectable({
   providedIn: "root"
@@ -8,12 +8,7 @@ import { Alert } from "src/app/models/enums/alert.enum";
 export class AlertService {
   public alertSubject = new Subject();
 
-  public callAlert(
-    type: Alert,
-    title: string,
-    content: string,
-    localStorageKey: string
-  ) {
-    this.alertSubject.next({ type, title, content, localStorageKey });
+  public callAlert(alert: Alert) {
+    this.alertSubject.next(alert);
   }
 }

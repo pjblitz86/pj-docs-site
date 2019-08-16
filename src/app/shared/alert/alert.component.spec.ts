@@ -46,7 +46,7 @@ describe("AlertService Component", () => {
       it("Updates storage so alert is called just once", () => {
         //arrange
         const key = LocalStorageKey.CookieNotification;
-        component.localStorageKey = key;
+        component.alert.key = key;
 
         //act
         component.close();

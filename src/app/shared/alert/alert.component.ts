@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { Alert } from "src/app/models/enums/alert.enum";
+import { Component, OnInit } from "@angular/core";
 import { AlertService } from "src/app/services/alert/alert.service";
 import { ALocalStorageService } from "src/app/services/local-storage/alocal-storage.service";
 import { LocalStorageKey } from "src/app/models/enums/local.storage-key.enum";
+import { AlertTypes } from "src/app/models/enums/alert-types.enum";
+import { Alert } from "src/app/models/alert.model";
 
 @Component({
   selector: "app-alert",
@@ -10,14 +11,10 @@ import { LocalStorageKey } from "src/app/models/enums/local.storage-key.enum";
   styleUrls: ["./alert.component.scss"]
 })
 export class AlertComponent implements OnInit {
-  public type: Alert = Alert.Info;
-  public title: string = "";
-  public content: string = "";
-
-  public alertTypes = Alert;
+  public alert: Alert = new Alert();
+  public alertTypes = AlertTypes;
   public isShown: boolean = true;
   public isNeeded: boolean = false;
-  public localStorageKey: LocalStorageKey;
 
   constructor(
     public alertService?: AlertService,
@@ -26,30 +23,30 @@ export class AlertComponent implements OnInit {
 
   public ngOnInit(): void {
     this.alertService.alertSubject.asObservable().subscribe(data => {
-      console.log(data);
+      this.alert = new Alert(data);
     });
     this.mustCallAlerts();
   }
 
   public close(): void {
     this.isShown = false;
-    this.localStorage.setItem(this.localStorageKey, "true");
+    this.localStorage.setItem(this.alert.key, "true");
   }
 
-  private async mustCallAlerts(): Promise<void> {
+  private mustCallAlerts(): void {
     if (!this.localStorage.getItem(LocalStorageKey.CookieNotification)) {
       this.callCookieNotification();
     }
   }
 
-  private callCookieNotification() {
-    this.type = Alert.Info;
-    this.title = "'What do we use cookies for?'";
-    this.content =
-      "'We use cookies to recognize your repeat visits and preferences, as well as to measure the effectiveness of campaign and analyze traffic.'";
-    this.localStorageKey = LocalStorageKey.CookieNotification;
-
+  private callCookieNotification(): void {
+    const type = AlertTypes.Info;
+    const title = "What do we use cookies for?";
+    const content =
+      "We use cookies to recognize your repeat visits and preferences, as well as to measure the effectiveness of campaign and analyze traffic.";
+    const key = LocalStorageKey.CookieNotification;
     this.isNeeded = true;
-    this.localStorageKey = LocalStorageKey.CookieNotification;
+
+    this.alert = new Alert({ type, title, content, key });
   }
 }

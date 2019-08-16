@@ -1,6 +1,7 @@
 import { AlertService } from "./alert.service";
 import { Subject } from "rxjs";
-import { Alert } from "src/app/models/enums/alert.enum";
+import { AlertTypes } from "src/app/models/enums/alert-types.enum";
+import { Alert } from "src/app/models/alert.model";
 
 describe("Alert Service Component", () => {
   it("Exist", () => {
@@ -30,22 +31,24 @@ describe("Alert Service Component", () => {
     describe("Call alert", () => {
       it("Pushes next alert data", done => {
         // arrange
-        const type = Alert.Info;
+        const type = AlertTypes.Info;
         const title = "some title";
         const content = "some content";
-        const localStorageKey = "some key";
+        const key = "some key";
+
+        const alert = new Alert({ type, title, content, key });
 
         // assert
         service.alertSubject.subscribe((data: any) => {
           expect(data.type).toBe(type);
           expect(data.title).toBe(title);
           expect(data.content).toBe(content);
-          expect(data.localStorageKey).toBe(localStorageKey);
+          expect(data.key).toBe(key);
           done();
         });
 
         //act
-        service.callAlert(type, title, content, localStorageKey);
+        service.callAlert(alert);
       });
     });
   });

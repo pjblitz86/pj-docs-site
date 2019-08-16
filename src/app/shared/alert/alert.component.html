@@ -1,16 +1,16 @@
 <div
   id="alert"
-  [class]="type"
+  [class]="alert.type"
   [class.is-shown]="isShown && isNeeded"
   [class.is-closed]="!isShown"
 >
-  <div id="icon-type" [ngSwitch]="type">
+  <div id="icon-type" [ngSwitch]="alert.type">
     <i *ngSwitchCase="alertTypes.Info" class="fas fa-info-circle"></i>
   </div>
 
   <div>
-    <h3>{{ title }}</h3>
-    <p>{{ content }}</p>
+    <h3>{{ alert.title }}</h3>
+    <p>{{ alert.content }}</p>
   </div>
 
   <button (click)="close()" id="close">
