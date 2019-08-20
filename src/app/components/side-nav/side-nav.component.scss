@@ -26,6 +26,11 @@ nav {
       align-items: center;
       padding-left: $side-padding;
 
+      &:hover {
+        background-color: $blue;
+        transition: background-color 0.3s;
+      }
+
       &.active-route {
         background-color: $blue;
 
@@ -61,6 +66,15 @@ nav {
 
           &.active-route {
             color: white;
+          }
+        }
+
+        &.fa-html5,
+        &.fa-css3-alt,
+        &.fa-js {
+          &:hover {
+            color: white;
+            transition: color 0.3s;
           }
         }
 
