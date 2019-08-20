@@ -26,9 +26,11 @@ nav {
       align-items: center;
       padding-left: $side-padding;
 
-      &:hover {
-        background-color: $blue;
-        transition: background-color 0.3s;
+      &:not(#logo) {
+        &:hover {
+          background-color: $blue;
+          transition: background-color 0.3s;
+        }
       }
 
       &.active-route {
