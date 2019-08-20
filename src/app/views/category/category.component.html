@@ -6,7 +6,7 @@
 </header>
 
 <div id="topics">
-  <app-resources></app-resources>
+  <app-resources [title]="'Resources'" [list]="resourceList"></app-resources>
   <div id="options">
     <app-topic *ngFor="let topic of category.topics" [topic]="topic">
     </app-topic>
@@ -14,7 +14,7 @@
 </div>
 
 <app-card [iconClasses]="'fas fa-book'" [title]="'Recommended Books'">
-  <div id="book-list">
+  <div id="books" #books>
     <app-book></app-book>
     <app-book></app-book>
   </div>

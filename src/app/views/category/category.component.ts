@@ -10,6 +10,7 @@ import { Category } from "src/app/models/category.model";
 })
 export class CategoryComponent {
   public category: Category = new Category();
+  public resourceList = ["books", "courses"];
 
   constructor(
     private route: ActivatedRoute,

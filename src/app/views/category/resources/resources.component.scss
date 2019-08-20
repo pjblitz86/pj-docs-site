@@ -17,8 +17,10 @@ ul {
   background-color: $secondary-background;
 
   li {
+    cursor: pointer;
     padding: 10px 0;
     text-align: center;
     color: $green;
+    text-transform: capitalize;
   }
 }

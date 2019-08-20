@@ -24,7 +24,8 @@ export class AppComponent {
     const urlPieces: string[] = navigationEnd.url
       .split("/")
       .filter(piece => piece.length > 0);
-    console.log(urlPieces);
+
+    urlPieces[urlPieces.length - 1] = this.removeHash(urlPieces);
 
     switch (urlPieces.length) {
       case 2:
@@ -46,5 +47,11 @@ export class AppComponent {
     }
 
     this.titleService.setTitle(title);
+  }
+
+  private removeHash(urlPieces: string[]): string {
+    return (urlPieces[urlPieces.length - 1] = urlPieces.length
+      ? urlPieces[urlPieces.length - 1].split("#")[0]
+      : "");
   }
 }

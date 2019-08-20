@@ -1,9 +1,10 @@
 <nav>
-  <h3>Resources</h3>
+  <h3>{{ title }}</h3>
 </nav>
 <div>
   <ul>
-    <li>Books</li>
-    <li>Courses</li>
+    <li *ngFor="let listItem of list" [routerLink]="[]" [fragment]="listItem">
+      {{ listItem }}
+    </li>
   </ul>
 </div>
