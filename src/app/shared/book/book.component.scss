@@ -56,3 +56,19 @@ article {
     }
   }
 }
+
+@media (min-width: $tabletMin) and (max-width: $tabletMax) {
+  article {
+    #book-content {
+      grid-template-columns: auto 1fr;
+    }
+  }
+}
+
+@media (min-width: $mobileMin) and (max-width: $mobileMax) {
+  article {
+    #book-content {
+      grid-template-columns: auto 1fr;
+    }
+  }
+}

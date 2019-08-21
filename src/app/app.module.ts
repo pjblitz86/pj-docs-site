@@ -9,6 +9,7 @@ import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";
 import { SharedModule } from "./shared/shared.module";
 import { AlertService } from "./services/alert/alert.service";
+import { TitleService } from "./services/title/title.service";
 
 @NgModule({
   declarations: [AppComponent, FooterComponent, SideNavComponent],
@@ -20,7 +21,7 @@ import { AlertService } from "./services/alert/alert.service";
       enabled: environment.production
     })
   ],
-  providers: [AlertService ],
+  providers: [AlertService, TitleService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
