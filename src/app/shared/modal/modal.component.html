@@ -1,5 +1,9 @@
 <div id="modal-container" [class.is-hidden]="isHidden">
-  <span id="close" (click)="close()"><i class="fas fa-times"></i></span>
+  <div id="heading">
+    <img src="assets/icons/icon-72x72.png" alt="Logo" />
+    <h5>Video Dev Docs</h5>
+    <i id="close" class="fas fa-times" (click)="close()"></i>
+  </div>
   <div id="content">
     <ng-content></ng-content>
   </div>

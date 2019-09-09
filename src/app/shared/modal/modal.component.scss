@@ -1,24 +1,66 @@
-@import "src/styles/mixins";
 @import "src/styles/variables";
+
+$padding: 10px;
 
 #modal-container {
   display: grid;
   max-height: 75vh;
-  min-width: 50vw;
-  background-color: $secondary-background;
+  position: absolute;
+  top: 10%;
+  min-width: 400px;
+  background-color: $background-color;
   grid-gap: 5px;
-  padding: 10px;
-  border: 1px solid white;
+  padding-top: $padding;
 
   &.is-hidden {
     display: none;
   }
 
-  #close {
-    justify-self: end;
+  #heading {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-gap: 10px;
+    align-items: center;
+    padding-right: $padding;
+    padding-left: $padding;
+    padding-bottom: $padding;
 
-    i:hover {
-      color: white;
+    img {
+      display: block;
+      width: 20px;
     }
+
+    h5 {
+      color: white;
+      margin: 0;
+    }
+
+    #close {
+      justify-self: end;
+      background-color: $red;
+      display: grid;
+      border: none;
+      padding: 5px;
+      font-size: 10px;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      justify-items: center;
+      align-items: center;
+      justify-self: end;
+      align-content: center;
+      justify-content: center;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  #content {
+    background-color: $secondary-background;
+    padding-right: $padding;
+    padding-left: $padding;
+    padding-bottom: $padding;
   }
 }
