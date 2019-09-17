@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ACategoryService } from "src/app/services/category/acategory.service";
 import { Category } from "src/app/models/category.model";
@@ -8,7 +8,7 @@ import { Category } from "src/app/models/category.model";
   templateUrl: "./category.component.html",
   styleUrls: ["./category.component.scss"]
 })
-export class CategoryComponent {
+export class CategoryComponent implements OnInit {
   public category: Category = new Category();
   public resourceList = ["books", "courses"];
 

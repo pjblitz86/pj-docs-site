@@ -4,6 +4,7 @@ export class Course {
   public author: string;
   public authorImage: string;
   public time: string;
+  public courseUrl: string;
 
   constructor(data?: any) {
     const defaults = {
@@ -12,6 +13,7 @@ export class Course {
       author: "",
       time: "",
       authorImage: "",
+      courseUrl: "",
       ...data
     };
 
@@ -20,5 +22,6 @@ export class Course {
     this.author = defaults.author;
     this.authorImage = defaults.authorImage;
     this.time = defaults.time;
+    this.courseUrl = defaults.courseUrl;
   }
 }
