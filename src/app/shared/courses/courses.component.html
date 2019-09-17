@@ -1,0 +1,12 @@
+<section>
+  <article *ngFor="let course of courses">
+    <img [src]="course.imageUrl" [alt]="course.title" />
+    <hr />
+
+    <div id="details">
+      <img [src]="course.authorImage" alt="Author" />
+      <h3>{{ course.title }}</h3>
+      <p>{{ course.author }} - {{ course.time }}</p>
+    </div>
+  </article>
+</section>

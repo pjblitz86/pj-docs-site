@@ -1,0 +1,38 @@
+@import "src/styles/variables";
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+article {
+  padding: 15px;
+  background-color: $tertiary-background;
+
+  #details {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: "author-pic title" "author-pic author-name";
+    grid-column-gap: 10px;
+
+    img {
+      display: block;
+      padding: 0;
+      width: 100%;
+      grid-area: author-pic;
+      border-radius: 50%;
+    }
+
+    h3 {
+      grid-area: title;
+      margin: 0;
+      color: $orange;
+    }
+
+    p {
+      grid-area: author-name;
+      color: white;
+      margin-bottom: 0;
+    }
+  }
+}
