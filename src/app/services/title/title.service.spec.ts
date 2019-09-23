@@ -1,7 +1,7 @@
 import { TitleService } from "./title.service";
-import { MockTitleService } from "../mocks/mock.title.service";
-import { MockRouter } from "../mocks/mock.router";
 import { NavigationEnd } from "@angular/router";
+import { MockRouter } from "../mocks/mock.router";
+import { MockTitleService } from "../mocks/mock.title.service";
 
 describe("Title Service", () => {
   it("Exists", () => {
