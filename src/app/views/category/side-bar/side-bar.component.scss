@@ -5,20 +5,4 @@ article {
   width: 150px;
   background-color: $secondary-background;
   padding: 10px;
-
-  #share-container {
-    display: grid;
-
-    #share-action {
-      display: grid;
-      grid-template-columns: auto auto;
-
-      i,
-      div {
-        color: $green;
-        font-weight: bold;
-        font-size: 25px;
-      }
-    }
-  }
 }

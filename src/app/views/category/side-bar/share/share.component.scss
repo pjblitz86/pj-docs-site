@@ -1,0 +1,51 @@
+@import "src/styles/variables";
+
+#share-container {
+  display: grid;
+  grid-gap: 20px;
+
+  #share-action {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    grid-column-gap: 5px;
+
+    i,
+    h4 {
+      color: $green;
+      font-weight: bold;
+    }
+
+    i {
+      font-size: 20px;
+      justify-self: end;
+    }
+
+    h4 {
+      font-size: 15px;
+    }
+  }
+
+  #social-media {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+
+    i {
+      font-size: 30px;
+
+      &.fa-facebook-square {
+        color: $fb-blue;
+      }
+
+      &.fa-linkedin {
+        color: $linkedin-green;
+      }
+
+      &.fa-twitter-square {
+        color: $twitter-blue;
+      }
+    }
+  }
+}

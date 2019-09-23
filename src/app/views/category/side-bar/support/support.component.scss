@@ -1,0 +1,28 @@
+@import "src/styles/variables";
+
+section {
+  h4 {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #support-icons {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: auto auto;
+    justify-content: center;
+
+    i {
+      font-size: 30px;
+
+      &.fa-paypal {
+        color: $paypal-blue;
+      }
+
+      &.fa-patreon {
+        color: $patreon;
+      }
+    }
+  }
+}

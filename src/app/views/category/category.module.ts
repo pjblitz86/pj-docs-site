@@ -8,11 +8,14 @@ import { CategoryService } from "src/app/services/category/category.service";
 import { TopicComponent } from "./topic/topic.component";
 import { SharedModule } from "src/app/shared/shared.module";
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { ShareComponent } from './side-bar/share/share.component';
+import { SupportComponent } from './side-bar/support/support.component';
+import { CourseComponent } from './side-bar/course/course.component';
 
 const routes: Routes = [{ path: ":id", component: CategoryComponent }];
 
 @NgModule({
-  declarations: [CategoryComponent, ResourcesComponent, TopicComponent, SideBarComponent],
+  declarations: [CategoryComponent, ResourcesComponent, TopicComponent, SideBarComponent, ShareComponent, SupportComponent, CourseComponent],
   providers: [{ provide: ACategoryService, useClass: CategoryService }],
   imports: [CommonModule, SharedModule, RouterModule.forChild(routes)]
 })
