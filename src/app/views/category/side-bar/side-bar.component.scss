@@ -2,7 +2,10 @@
 
 article {
   display: grid;
-  width: 150px;
+  min-width: 100px;
+  max-width: 250px;
   background-color: $secondary-background;
   padding: 10px;
+  grid-gap: 30px;
+  padding-bottom: 50px;
 }
