@@ -7,7 +7,7 @@ describe("side-bar Component", () => {
   });
   it("Can be built", () => {
     //act
-    const component = new ShareComponent();
+    const component = new ShareComponent(null);
     // assert
     expect(component instanceof ShareComponent).toBe(true);
   });
