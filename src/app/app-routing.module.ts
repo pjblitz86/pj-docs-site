@@ -13,6 +13,11 @@ const routes: Routes = [
       import("./views/category/category.module").then(
         module => module.CategoryModule
       )
+  },
+  {
+    path: "about",
+    loadChildren: () =>
+      import("./views/about/about.module").then(module => module.AboutModule)
   }
 ];
 

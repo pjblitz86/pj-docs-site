@@ -29,4 +29,8 @@ export class ShareComponent {
   private getUrl(): string {
     return `&url=https://www.VideoDevDocs.com${this.router.url}`;
   }
+
+  public get facebookMessage(): string {
+    return ``;
+  }
 }

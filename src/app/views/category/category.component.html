@@ -1,31 +1,35 @@
-<header>
-  <i [ngClass]="[category.iconClasses, category.id]"></i>
-  <h1>{{ category.title }}</h1>
+<div id="category-container">
+  <header>
+    <i [ngClass]="[category.iconClasses, category.id]"></i>
+    <h1>{{ category.title }}</h1>
 
-  <p>{{ category.description }}</p>
-</header>
+    <p>{{ category.description }}</p>
+  </header>
 
-<div id="topics">
-  <app-resources [title]="'Resources'" [list]="resourceList"></app-resources>
-  <div id="options">
-    <app-topic *ngFor="let topic of category.topics" [topic]="topic">
-    </app-topic>
+  <div id="topics">
+    <app-resources [title]="'Resources'" [list]="resourceList"></app-resources>
+    <div id="options">
+      <app-topic *ngFor="let topic of category.topics" [topic]="topic">
+      </app-topic>
+    </div>
   </div>
+
+  <div id="card-content">
+    <app-card [iconClasses]="'fas fa-book'" [title]="'Recommended Books'">
+      <div id="books" #books>
+        <app-book></app-book>
+        <app-book></app-book>
+      </div>
+    </app-card>
+
+    <app-card
+      id="courses"
+      [iconClasses]="'fas fa-play'"
+      [title]="'Recommended Courses'"
+    >
+      <app-courses></app-courses>
+    </app-card>
+  </div>
+
+  <app-side-bar></app-side-bar>
 </div>
-
-<app-side-bar></app-side-bar>
-
-<app-card [iconClasses]="'fas fa-book'" [title]="'Recommended Books'">
-  <div id="books" #books>
-    <app-book></app-book>
-    <app-book></app-book>
-  </div>
-</app-card>
-
-<app-card
-  id="courses"
-  [iconClasses]="'fas fa-play'"
-  [title]="'Recommended Courses'"
->
-  <app-courses></app-courses>
-</app-card>
