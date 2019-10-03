@@ -1,15 +1,64 @@
-#team-members {
-  display: grid;
-  max-width: 200px;
+@import "src/styles/variables";
 
-  #team {
+#team-container {
+  height: 550px;
+  width: 1000px;
+  background-image: url("https://via.placeholder.com/900x650");
+
+  #team-members {
     display: grid;
-    grid-template-columns: auto auto auto 1fr;
-    grid-gap: 5px;
+    max-width: 250px;
+    background-color: rgba(37, 37, 37, 0.9);
+    margin-left: 5%;
+    padding: 15px;
+    height: 100%;
+    align-items: center;
 
-    img {
-      display: block;
-      max-width: 50px;
+    hr {
+      height: 2px;
+      border: $light-grey;
+    }
+
+    #team {
+      display: grid;
+      grid-template-columns: auto auto auto 1fr;
+      grid-gap: 5px;
+
+      img {
+        display: block;
+        max-width: 50px;
+        cursor: pointer;
+      }
+    }
+
+    #member {
+      margin-top: 0;
+      h3,
+      h4 {
+        margin: 0;
+      }
+
+      h3 {
+        color: $orange;
+      }
+
+      h4 {
+        color: $black;
+      }
+    }
+
+    p {
+      color: $green;
+      margin-bottom: 0;
+    }
+
+    #social-media {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-items: center;
+      i {
+        font-size: 35px;
+      }
     }
   }
 }

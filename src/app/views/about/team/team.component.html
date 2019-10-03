@@ -1,21 +1,30 @@
-<div id="team-members">
-  <div id="team">
-    <img src="assets/team/PaulJukman.jpg" alt="PJ" />
-    <img src="assets/team/PaulJukman.jpg" alt="PJ" />
-  </div>
-  <hr />
-  <h3>{{ currentTeamMember.fullName }}</h3>
-  <h4>{{ currentTeamMember.occupation }}</h4>
-  <p>{{ currentTeamMember.description1 }}</p>
-  <p>{{ currentTeamMember.description2 }}</p>
-  <hr />
+<div id="team-container">
+  <div id="team-members">
+    <div id="team">
+      <img
+        *ngFor="let member of teamMembers"
+        [src]="member.photo"
+        alt="member.fullName"
+        (click)="selectTeamMember(member)"
+      />
+    </div>
+    <hr />
+    <div id="member">
+      <h3>{{ currentTeamMember.fullName }}</h3>
+      <h4>{{ currentTeamMember.occupation }}</h4>
+    </div>
 
-  <div id="social-media">
-    <i
-      *ngFor="let media of currentTeamMember.socialMedia"
-      [ngClass]="[media.iconClasses]"
-    ></i>
+    <p>{{ currentTeamMember.description1 }}</p>
+    <p>{{ currentTeamMember.description2 }}</p>
+    <hr />
+    <div id="social-media">
+      <a
+        *ngFor="let media of currentTeamMember.socialMedia"
+        [href]="media.url"
+        target="_blank"
+      >
+        <i [ngClass]="[media.iconClasses]"></i>
+      </a>
+    </div>
   </div>
 </div>
-
-<!-- "https://via.placeholder.com/1080x500" -->

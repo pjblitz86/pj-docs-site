@@ -10,4 +10,8 @@ import { TEAM_MEMBERS_DATA } from "src/app/models/data/team.members.data";
 export class TeamComponent {
   public currentTeamMember = TEAM_MEMBERS_DATA[0];
   public teamMembers = TEAM_MEMBERS_DATA;
+
+  public selectTeamMember(teamMember: TeamMember): void {
+    this.currentTeamMember = teamMember;
+  }
 }

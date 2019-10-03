@@ -4,6 +4,7 @@ export class TeamMember {
   public firstName: string;
   public middleName: string;
   public lastName: string;
+  public photo: string;
   public occupation: string;
   public description1: string;
   public description2: string;
@@ -14,6 +15,7 @@ export class TeamMember {
       firstName: "",
       middleName: "",
       lastName: "",
+      photo: "",
       occupation: "",
       description1: "",
       description2: "",
@@ -24,6 +26,7 @@ export class TeamMember {
     this.firstName = defaults.firstName;
     this.middleName = defaults.middleName;
     this.lastName = defaults.lastName;
+    this.photo = defaults.photo;
     this.occupation = defaults.occupation;
     this.description1 = defaults.description1;
     this.description2 = defaults.description2;
