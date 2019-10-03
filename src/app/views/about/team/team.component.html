@@ -1,0 +1,21 @@
+<div id="team-members">
+  <div id="team">
+    <img src="assets/team/PaulJukman.jpg" alt="PJ" />
+    <img src="assets/team/PaulJukman.jpg" alt="PJ" />
+  </div>
+  <hr />
+  <h3>{{ currentTeamMember.fullName }}</h3>
+  <h4>{{ currentTeamMember.occupation }}</h4>
+  <p>{{ currentTeamMember.description1 }}</p>
+  <p>{{ currentTeamMember.description2 }}</p>
+  <hr />
+
+  <div id="social-media">
+    <i
+      *ngFor="let media of currentTeamMember.socialMedia"
+      [ngClass]="[media.iconClasses]"
+    ></i>
+  </div>
+</div>
+
+<!-- "https://via.placeholder.com/1080x500" -->

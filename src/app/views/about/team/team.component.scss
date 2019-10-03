@@ -1,0 +1,15 @@
+#team-members {
+  display: grid;
+  max-width: 200px;
+
+  #team {
+    display: grid;
+    grid-template-columns: auto auto auto 1fr;
+    grid-gap: 5px;
+
+    img {
+      display: block;
+      max-width: 50px;
+    }
+  }
+}

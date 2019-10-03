@@ -7,6 +7,7 @@ blockquote {
   color: white;
   grid-gap: 15px;
   grid-template-columns: auto 1fr;
+  border-left: 10px solid $yellow;
 
   i {
     color: white;

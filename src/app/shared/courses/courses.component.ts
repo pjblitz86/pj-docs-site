@@ -12,22 +12,19 @@ export class CoursesComponent {
       title: "100 algorithm challenge",
       author: "Paul Jukman",
       time: "10h",
-      authorImage:
-        "http://www.sunwaychessfestival.com/imagenes/perfil/12802247.jpg"
+      authorImage: "assets/team/PaulJukman.jpg"
     }),
     new Course({
       title: "100 algo challenge",
       author: "Paul Jukman",
       time: "10h",
-      authorImage:
-        "http://www.sunwaychessfestival.com/imagenes/perfil/12802247.jpg"
+      authorImage: "assets/team/PaulJukman.jpg"
     }),
     new Course({
       title: "100 algo challenge",
       author: "Paul Jukman",
       time: "10h",
-      authorImage:
-        "http://www.sunwaychessfestival.com/imagenes/perfil/12802247.jpg"
+      authorImage: "assets/team/PaulJukman.jpg"
     })
   ];
 }
