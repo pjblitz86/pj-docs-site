@@ -8,8 +8,13 @@ import { Tab } from "src/app/models/tab.model";
 })
 export class TabItemsComponent implements OnInit {
   @Input() public tabItems: Tab[] = [];
+  public selectedTabItem: Tab;
 
   public ngOnInit() {
-    this.tabItems[0].isActive = true;
+    this.selectedTabItem = this.tabItems[0];
+  }
+
+  public selectTabItem(tabItem: Tab) {
+    this.selectedTabItem = tabItem;
   }
 }

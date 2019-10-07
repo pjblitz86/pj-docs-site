@@ -1,8 +1,15 @@
-<section>
+<div>
   <ul>
-    <li [class.is-active]="tabItem.isActive" *ngFor="let tabItem of tabItems">
+    <li
+      [class.is-active]="tabItem === selectedTabItem"
+      *ngFor="let tabItem of tabItems"
+      (click)="selectTabItem(tabItem)"
+    >
       <i
-        [ngClass]="[tabItem.iconClasses, tabItem.isActive ? 'is-active' : '']"
+        [ngClass]="[
+          tabItem.iconClasses,
+          tabItem === selectedTabItem ? 'is-active' : ''
+        ]"
       ></i
       >{{ tabItem.label }}
     </li>
@@ -10,4 +17,4 @@
   <div>
     <h2>SOME DYNAMIC CONTENT</h2>
   </div>
-</section>
+</div>
