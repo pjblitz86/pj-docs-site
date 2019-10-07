@@ -6,6 +6,10 @@
     <p>{{ category.description }}</p>
   </header>
 
+  <app-vertical-tabs
+    [tabContainers]="category.tabContainers"
+  ></app-vertical-tabs>
+
   <div id="topics">
     <app-resources [title]="'Resources'" [list]="resourceList"></app-resources>
     <div id="options">

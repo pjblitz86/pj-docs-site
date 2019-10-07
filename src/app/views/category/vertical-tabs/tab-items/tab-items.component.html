@@ -1,0 +1,13 @@
+<section>
+  <ul>
+    <li [class.is-active]="tabItem.isActive" *ngFor="let tabItem of tabItems">
+      <i
+        [ngClass]="[tabItem.iconClasses, tabItem.isActive ? 'is-active' : '']"
+      ></i
+      >{{ tabItem.label }}
+    </li>
+  </ul>
+  <div>
+    <h2>SOME DYNAMIC CONTENT</h2>
+  </div>
+</section>

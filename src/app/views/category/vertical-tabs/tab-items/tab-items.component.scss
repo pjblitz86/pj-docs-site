@@ -1,0 +1,24 @@
+@import "src/styles/variables";
+
+section {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  ul {
+    display: grid;
+    grid-gap: 20px;
+    text-align: center;
+
+    li,
+    i {
+      color: $green;
+
+      &.is-active {
+        color: white;
+      }
+    }
+
+    i {
+      margin-right: 10px;
+    }
+  }
+}

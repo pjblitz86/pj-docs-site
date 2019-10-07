@@ -1,6 +1,7 @@
 import { Topic } from "./topic.model";
 import { Categories } from "./enums/Category.enum";
 import { JAVASCRIPT_DATA } from "./data/javascript";
+import { TabContainer } from "./tab-container.model";
 
 export class Category {
   public id: string;
@@ -8,6 +9,7 @@ export class Category {
   public description: string;
   public topics: Topic[];
   public iconClasses: string;
+  public tabContainers: TabContainer[];
 
   constructor(data?: any) {
     const defaults = {
@@ -15,6 +17,8 @@ export class Category {
       title: "",
       description: "",
       topics: [],
+      iconClasses: "",
+      tabContainers: [],
       ...data
     };
 
@@ -23,6 +27,9 @@ export class Category {
     this.description = defaults.description;
     this.topics = defaults.topics.map(topic => new Topic(topic));
     this.iconClasses = this.getIconClasses(this.id);
+    this.tabContainers = defaults.tabContainers.map(
+      tabContainer => new TabContainer(tabContainer)
+    );
   }
 
   private getIconClasses(id: string): string {

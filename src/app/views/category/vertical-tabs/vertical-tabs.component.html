@@ -1,0 +1,10 @@
+<article>
+  <section *ngFor="let tabContainer of tabContainers" class="tabs">
+    <header>
+      <h3>{{ tabContainer.title }}</h3>
+    </header>
+    <hr />
+
+    <app-tab-items [tabItems]="tabContainer.tabItems"></app-tab-items>
+  </section>
+</article>
