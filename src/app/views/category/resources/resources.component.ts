@@ -6,6 +6,6 @@ import { Component, Input } from "@angular/core";
   styleUrls: ["./resources.component.scss"]
 })
 export class ResourcesComponent {
-  @Input() public title: string = "";
+  @Input() public title = "";
   @Input() public list: string[];
 }

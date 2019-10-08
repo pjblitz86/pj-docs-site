@@ -13,6 +13,7 @@ import { SupportComponent } from "./side-bar/support/support.component";
 import { CourseComponent } from "./side-bar/course/course.component";
 import { VerticalTabsComponent } from "./vertical-tabs/vertical-tabs.component";
 import { TabItemsComponent } from "./vertical-tabs/tab-items/tab-items.component";
+import { DynamicContentComponent } from "./dynamic-content/dynamic-content.component";
 
 const routes: Routes = [{ path: ":id", component: CategoryComponent }];
 
@@ -26,9 +27,11 @@ const routes: Routes = [{ path: ":id", component: CategoryComponent }];
     SupportComponent,
     CourseComponent,
     VerticalTabsComponent,
-    TabItemsComponent
+    TabItemsComponent,
+    DynamicContentComponent
   ],
   providers: [{ provide: ACategoryService, useClass: CategoryService }],
-  imports: [CommonModule, SharedModule, RouterModule.forChild(routes)]
+  imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
+  entryComponents: [ResourcesComponent]
 })
 export class CategoryModule {}
