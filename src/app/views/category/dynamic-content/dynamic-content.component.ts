@@ -24,30 +24,36 @@ export class DynamicContentComponent implements OnInit, OnDestroy {
     resourcesComponent: ResourcesComponent
   };
 
-  @Input() context: any;
+  @Input() public context: any;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
 
-  ngOnInit() {
+  public ngOnInit(): void {
     if (this.type) {
       const componentType = this.getComponentType(this.type);
       const factory = this.componentFactoryResolver.resolveComponentFactory(
         componentType
       );
       this.componentRef = this.container.createComponent(factory);
-      let instance = this.componentRef.instance as any;
+      const keys = Object.keys(this.context);
+      const instance = (this.componentRef as any).instance;
       instance.context = this.context;
+      console.log(instance.context);
+
+      for (const key of keys) {
+        instance[key] = this.context[key];
+      }
     }
   }
 
-  ngOnDestroy() {
+  public ngOnDestroy(): void {
     if (this.componentRef) {
       this.componentRef.destroy();
       this.componentRef = null;
     }
   }
 
-  getComponentType(typeName: string) {
+  private getComponentType(typeName: string): any {
     const type = this.mappings[typeName];
     return type;
   }

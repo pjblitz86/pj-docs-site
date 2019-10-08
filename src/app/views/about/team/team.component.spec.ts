@@ -48,7 +48,7 @@ describe("Team Component", () => {
         component.selectTeamMember(teamMember);
 
         // assert
-        expect(component.selectTeamMember).toBe(teamMember);
+        expect(component.currentTeamMember).toEqual(teamMember);
       });
     });
   });
