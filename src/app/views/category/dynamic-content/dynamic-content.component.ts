@@ -8,7 +8,8 @@ import {
   ComponentFactoryResolver,
   ComponentRef
 } from "@angular/core";
-import { ResourcesComponent } from "../resources/resources.component";
+
+import { DYNAMIC_CONTENT_KEYS } from "./dynamic-content-keys.data";
 
 @Component({
   selector: "app-dynamic-content",
@@ -19,12 +20,9 @@ export class DynamicContentComponent implements OnInit, OnDestroy {
   @ViewChild("container", { static: true, read: ViewContainerRef })
   container: ViewContainerRef;
   @Input() public type: string;
-  private componentRef: ComponentRef<{}>;
-  private mappings = {
-    resourcesComponent: ResourcesComponent
-  };
-
   @Input() public context: any;
+  private componentRef: ComponentRef<{}>;
+  private mappings = DYNAMIC_CONTENT_KEYS;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
 
@@ -35,14 +33,16 @@ export class DynamicContentComponent implements OnInit, OnDestroy {
         componentType
       );
       this.componentRef = this.container.createComponent(factory);
-      const keys = Object.keys(this.context);
-      const instance = (this.componentRef as any).instance;
-      instance.context = this.context;
-      console.log(instance.context);
+      this.updateInputs(this.componentRef.instance);
+    }
+  }
 
-      for (const key of keys) {
-        instance[key] = this.context[key];
-      }
+  public updateInputs(instance): any {
+    const keys = Object.keys(this.context);
+    instance.context = this.context;
+
+    for (const key of keys) {
+      instance[key] = this.context[key];
     }
   }
 
