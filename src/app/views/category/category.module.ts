@@ -14,6 +14,7 @@ import { CourseComponent } from "./side-bar/course/course.component";
 import { VerticalTabsComponent } from "./vertical-tabs/vertical-tabs.component";
 import { TabItemsComponent } from "./vertical-tabs/tab-items/tab-items.component";
 import { DynamicContentComponent } from "./dynamic-content/dynamic-content.component";
+import { BreadCrumbsComponent } from "./bread-crumbs/bread-crumbs.component";
 
 const routes: Routes = [{ path: ":id", component: CategoryComponent }];
 
@@ -28,10 +29,10 @@ const routes: Routes = [{ path: ":id", component: CategoryComponent }];
     CourseComponent,
     VerticalTabsComponent,
     TabItemsComponent,
-    DynamicContentComponent
+    DynamicContentComponent,
+    BreadCrumbsComponent
   ],
   providers: [{ provide: ACategoryService, useClass: CategoryService }],
-  imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
-  entryComponents: [ResourcesComponent]
+  imports: [CommonModule, SharedModule, RouterModule.forChild(routes)]
 })
 export class CategoryModule {}
