@@ -7,7 +7,7 @@ describe("Bread Crumbs Component", () => {
   });
   it("Can be built", () => {
     //act
-    const component = new BreadCrumbsComponent();
+    const component = new BreadCrumbsComponent(null);
     // assert
     expect(component instanceof BreadCrumbsComponent).toBe(true);
   });

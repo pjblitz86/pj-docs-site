@@ -1,26 +1,60 @@
 @import "src/styles/variables";
 
-ul {
-  margin: 0;
-  li {
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: $secondary-background;
-    border-right: 1px solid $black;
+div {
+  background-color: $secondary-background;
+  margin-bottom: 10px;
+  ul {
+    margin: 0;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: left;
+    align-content: center;
 
-    &:first-of-type {
-      i {
-        padding-right: 5px;
-        &.fa-js {
-          color: $javascript-color;
+    li {
+      display: grid;
+      grid-template-columns: auto auto;
+      padding: 5px 5px 10px 10px;
+      background-color: $secondary-background;
+      border-right: 1px solid $black;
+      cursor: pointer;
+
+      p {
+        margin: 0;
+      }
+
+      &:first-of-type {
+        display: grid;
+        grid-template-columns: auto auto auto;
+
+        i {
+          &:first-of-type {
+            padding-right: 5px;
+            &.fa-js {
+              color: $javascript-color;
+            }
+          }
         }
       }
-    }
 
-    i {
+      i {
+        &:last-of-type {
+          padding-left: 10px;
+          font-size: 18px;
+        }
+      }
+
       &:last-of-type {
-        scroll-padding-left: 5px;
-        font-size: 18px;
+        background-color: $black;
+        p {
+          color: white;
+          padding-right: 5px;
+        }
+
+        i {
+          &:last-of-type {
+            display: none;
+          }
+        }
       }
     }
   }

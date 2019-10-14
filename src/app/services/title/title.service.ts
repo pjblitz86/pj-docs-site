@@ -2,10 +2,15 @@ import { Injectable } from "@angular/core";
 import { Router, NavigationEnd } from "@angular/router";
 import { Title } from "@angular/platform-browser";
 import { filter } from "rxjs/operators";
-import { FormattedTitles } from "src/app/models/objects/formatted.titles";
+import { BreadCrumb } from "src/app/models/bread-crumb.model";
+import { DISPLAY_META_DATA } from "../../models/data/display-meta-data.data";
 
-@Injectable()
+@Injectable({
+  providedIn: "root"
+})
 export class TitleService {
+  public breadCrumbs: BreadCrumb[] = [];
+
   constructor(public router: Router, public titleService: Title) {}
 
   public init(): void {
@@ -13,7 +18,17 @@ export class TitleService {
       .pipe(filter((event: any) => event instanceof NavigationEnd))
       .subscribe((navigationEnd: NavigationEnd) => {
         this.updateTitle(navigationEnd);
+        this.updateBreadCrumbs(navigationEnd.url);
       });
+  }
+
+  private updateBreadCrumbs(url: string): void {
+    const validCrumbs = url
+      .split("/")
+      .filter((piece, index) => piece.length > 0 && index > 1)
+      .map(p => new BreadCrumb({ urlPiece: p }));
+
+    this.breadCrumbs = validCrumbs;
   }
 
   private updateTitle(navigationEnd: NavigationEnd): void {
@@ -39,7 +54,7 @@ export class TitleService {
     let title = `${actualCategory.toUpperCase()} | VDD`;
 
     if (actualCategory === "javascript") {
-      title = `${FormattedTitles[actualCategory]} | VDD`;
+      title = `${DISPLAY_META_DATA[actualCategory].label} | VDD`;
     }
 
     this.titleService.setTitle(title);

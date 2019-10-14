@@ -1,14 +1,18 @@
-<ul>
-  <li>
-    <i
-      _ngcontent-axs-c4=""
-      ng-reflect-ng-class="fab fa-js, javascript"
-      class="fab fa-js javascript"
-    ></i>
-    Javascript <i class="fas fa-caret-right"></i>
-  </li>
-  <li>
-    Arrays
-    <i class="fas fa-caret-right"></i>
-  </li>
-</ul>
+<div>
+  <ul>
+    <li *ngFor="let crumb of breadCrumbs">
+      <i *ngIf="crumb.iconClasses" [ngClass]="[crumb.iconClasses]"></i>
+      <p>{{ crumb.label }}</p>
+      <i class="fas fa-caret-right"></i>
+      <!-- </li>
+    <li>
+      <p>Arrays</p>
+      <i class="fas fa-caret-right"></i>
+    </li>
+    <li>
+      <p>Map</p>
+      <i class="fas fa-caret-right"></i>
+    </li> -->
+    </li>
+  </ul>
+</div>
