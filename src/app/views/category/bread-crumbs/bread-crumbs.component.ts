@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { BreadCrumb } from "src/app/models/bread-crumb.model";
-import { TitleService } from "src/app/services/title/title.service";
+import { BreadCrumbsService } from "src/app/services/bread-crumbs/bread-crumbs.service";
 
 @Component({
   selector: "app-bread-crumbs",
@@ -10,9 +10,9 @@ import { TitleService } from "src/app/services/title/title.service";
 export class BreadCrumbsComponent implements OnInit {
   public breadCrumbs: BreadCrumb[] = [];
 
-  constructor(public titleService: TitleService) {}
+  constructor(public breadCrumbsService: BreadCrumbsService) {}
 
-  public ngOnInit() {
-    this.breadCrumbs = this.titleService.breadCrumbs;
+  public ngOnInit(): void {
+    this.breadCrumbs = this.breadCrumbsService.breadCrumbs;
   }
 }
