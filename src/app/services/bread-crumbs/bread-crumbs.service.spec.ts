@@ -27,6 +27,22 @@ describe("Default", () => {
         const navigationEnd = new NavigationEnd(
           1,
           "category/javascript/arrays",
+          "category/javascript/arrays"
+        );
+        mockRouter = new MockRouter();
+        mockRouter.routerEvent = navigationEnd;
+        service = new BreadCrumbsService(mockRouter as any);
+
+        // assert
+        expect(service.breadCrumbs[0].label).toBe("Javascript");
+        expect(service.breadCrumbs[1].label).toBe("arrays");
+      });
+
+      it("Removes hash from bread crumbs url piece", () => {
+        // arrange
+        const navigationEnd = new NavigationEnd(
+          1,
+          "category/javascript/arrays",
           "category/javascript/arrays#books"
         );
         mockRouter = new MockRouter();
@@ -37,7 +53,6 @@ describe("Default", () => {
         expect(service.breadCrumbs[0].label).toBe("Javascript");
         expect(service.breadCrumbs[1].label).toBe("arrays");
       });
-      it("Removes hash from bread crumbs url piece", () => {});
     });
   });
 });

@@ -1,18 +1,12 @@
 <div>
   <ul>
-    <li *ngFor="let crumb of breadCrumbs">
+    <li
+      *ngFor="let crumb of breadCrumbs; let i = index"
+      [routerLink]="getRouteUrl(i)"
+    >
       <i *ngIf="crumb.iconClasses" [ngClass]="[crumb.iconClasses]"></i>
       <p>{{ crumb.label }}</p>
       <i class="fas fa-caret-right"></i>
-      <!-- </li>
-    <li>
-      <p>Arrays</p>
-      <i class="fas fa-caret-right"></i>
-    </li>
-    <li>
-      <p>Map</p>
-      <i class="fas fa-caret-right"></i>
-    </li> -->
     </li>
   </ul>
 </div>

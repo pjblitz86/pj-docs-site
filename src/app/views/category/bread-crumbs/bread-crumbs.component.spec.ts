@@ -39,5 +39,46 @@ describe("Bread Crumbs Component", () => {
         expect(component.breadCrumbs[1].label).toEqual("arrays");
       });
     });
+
+    describe("Get route url", () => {
+      it("Category level", () => {
+        // arrange
+        component.breadCrumbs = [new BreadCrumb({ urlPiece: "javascript" })];
+
+        // act
+        const result = component.getRouteUrl(0);
+
+        // assert
+        expect(result).toBe("/category/javascript");
+      });
+
+      it("Topic level", () => {
+        // arrange
+        component.breadCrumbs = [
+          new BreadCrumb({ urlPiece: "javascript" }),
+          new BreadCrumb({ urlPiece: "arrays" })
+        ];
+
+        // act
+        const result = component.getRouteUrl(1);
+
+        // assert
+        expect(result).toBe("/category/javascript/topic/arrays");
+      });
+      it("Detail level", () => {
+        // arrange
+        component.breadCrumbs = [
+          new BreadCrumb({ urlPiece: "javascript" }),
+          new BreadCrumb({ urlPiece: "arrays" }),
+          new BreadCrumb({ urlPiece: "map" })
+        ];
+
+        // act
+        const result = component.getRouteUrl(2);
+
+        // assert
+        expect(result).toBe("/category/javascript/topic/arrays/detail/map");
+      });
+    });
   });
 });
