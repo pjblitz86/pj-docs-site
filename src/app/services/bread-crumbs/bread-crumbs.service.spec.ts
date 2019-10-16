@@ -21,23 +21,23 @@ describe("Default", () => {
     let mockRouter: MockRouter;
     let service: BreadCrumbsService;
 
-    beforeEach(() => {
-      mockRouter = new MockRouter();
-      const navigationEnd = new NavigationEnd(
-        1,
-        "category/javascript/arrays",
-        "category/javascript/arrays"
-      );
-      mockRouter.routerEvent = navigationEnd;
-      service = new BreadCrumbsService(mockRouter as any);
-    });
+    describe("On navigation end", () => {
+      it("Sets bread crumbs", () => {
+        // arrange
+        const navigationEnd = new NavigationEnd(
+          1,
+          "category/javascript/arrays",
+          "category/javascript/arrays#books"
+        );
+        mockRouter = new MockRouter();
+        mockRouter.routerEvent = navigationEnd;
+        service = new BreadCrumbsService(mockRouter as any);
 
-    // describe("On navigation end", () => {
-    //   it("Sets bread crumbs", () => {
-    //     // assert
-    //     expect(service.breadCrumbs[0].label).toBe("Javascript");
-    //     expect(service.breadCrumbs[1].label).toBe("arrays");
-    //   });
-    // });
+        // assert
+        expect(service.breadCrumbs[0].label).toBe("Javascript");
+        expect(service.breadCrumbs[1].label).toBe("arrays");
+      });
+      it("Removes hash from bread crumbs url piece", () => {});
+    });
   });
 });
