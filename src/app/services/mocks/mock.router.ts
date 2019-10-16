@@ -1,9 +1,16 @@
-import { BehaviorSubject } from "rxjs";
+import { Observable } from "rxjs";
+import { NavigationEnd } from "@angular/router";
 
 export class MockRouter {
-  public routerSubject = new BehaviorSubject<any>({});
-  public routerEvent: any;
+  public url = "";
+  public routerObservable = new Observable(observer => {
+    observer.next(this.routerEvent);
+    observer.complete();
+  });
+
+  public routerEvent: NavigationEnd;
+
   public get events() {
-    return this.routerSubject.next(this.routerEvent);
+    return this.routerObservable;
   }
 }
